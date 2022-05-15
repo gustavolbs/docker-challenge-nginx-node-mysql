@@ -10,13 +10,5 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 COPY . .
-# COPY package*.json ./
-
-# RUN npm install
 
 EXPOSE 3000
-
-# ENTRYPOINT [ "npm", "start" ]
-
-
-# CMD ["node", "index.js"]

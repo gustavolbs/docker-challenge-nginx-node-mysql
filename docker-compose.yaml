@@ -4,7 +4,6 @@ services:
   nginx:
     build:
       context: ./nginx
-      # dockerfile: Dockerfile.prod
       dockerfile: Dockerfile
     container_name: nginx
     restart: always
