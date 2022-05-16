@@ -13,15 +13,6 @@ const config = {
 
 const connection = mysql.createConnection(config);
 
-function createTable() {
-  connection.query(`
-    CREATE TABLE IF NOT EXISTS PEOPLE(
-        ID INT NOT NULL AUTO_INCREMENT, 
-        NAME VARCHAR(255) NOT NULL,
-        PRIMARY KEY (ID)
-    )`);
-}
-
 function response(results) {
   return `
   <h1>Full Cycle Rocks!</h1>
@@ -30,11 +21,6 @@ function response(results) {
   </ol>
   `;
 }
-
-connection.connect(() => {
-  createTable();
-  console.log(`Database connected!!!`);
-});
 
 app.get("/", (req, res) => {
   const randomName = faker.name.findName();
